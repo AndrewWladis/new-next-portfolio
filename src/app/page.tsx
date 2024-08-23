@@ -83,11 +83,6 @@ export default function Home() {
               description: "Challenge your skills, reflexes, and endurance in this addictive arcade adventure: EKSE."
             },
             {
-              name: "CorrectBoxd",
-              link: "https://correct-boxd.netlify.app/",
-              description: "CorrectBoxd is a movie rating and ranking site that not only allows users to rank movies but also displays movie's rating from the site creator."
-            },
-            {
               name: "515",
               link: "https://515game.netlify.app/",
               description: "515 is a Breaking Bad-themed clone of 2048, where players combine elements blocks to create an empire."
