@@ -38,19 +38,10 @@ export default function Home() {
       <div className="w-full flex items-center justify-center flex-col h-5/6">
         <h1 className="text-gray-100 text-5xl font-sans font-semibold">Andrew Wladis</h1>
         <h2 className="text-gray-100 text-4xl font-sans">Software Developer</h2>
-        {isDesktop ? <div
-          className="bg-white bg-opacity-40 absolute rounded-xl shadow-white-glow"
-          style={{
-            width: '20px',
-            height: '20px',
-            top: mousePosition.y + 'px',
-            left: mousePosition.x + 'px',
-          }}
-        ></div> : null}
       </div>
-      <div id="projects" className="w-full h-5/6 bg-gradient-to-b from-zinc-950 to-blue-950 flex flex-col" style={{ paddingTop: 70 }}>
-        <h1 className="text-gray-100 text-3xl font-sans text-center">Some of my more recent projects...</h1>
-        <div className='flex flex-row overflow-x-scroll overflow-y-hidden'>
+      <div id="projects" className="w-full bg-gradient-to-b from-zinc-950 to-blue-950 flex flex-col" style={{ paddingTop: 70 }}>
+        <h1 className="text-gray-100 text-3xl font-sans text-center py-2 ">Some of my more recent projects...</h1>
+        <div className='flex flex-wrap justify-evenly'>
           {[
             {
               name: "Music Box'd",
@@ -92,27 +83,29 @@ export default function Home() {
                   null
                 ) : (
                   <div
-                    className="h-96 flex flex-row items-center justify-center"
+                    className="flex flex-row items-center justify-center bg-slate-800 bg-opacity-50 p-1 mx-1 my-2 rounded-md duration-500 ease-in-out hover:bg-opacity-100"
                     style={{
-                      minWidth: 350
+                      minWidth: 315
                     }}
                     key={item.name.replace(/\s/g, "").toLowerCase()}
                   >
                     <Image
                       src={`/${item.name.replace(/\s/g, "").toLowerCase()}.png`}
-                      width={150}
-                      height={417}
+                      width={135}
+                      height={300}
                       alt={item.name}
                       style={{
-                        minWidth: 150,
-                        minHeight: 417
+                        minWidth: 135,
+                        minHeight: 300
                       }}
                       className='pr-3 object-contain'
                     />
                     <div className='flex flex-col justify-center h-full'>
                       <p className="text-gray-200 text-2xl font-sans text-left font-medium">{item.name}</p>
                       <p className="text-gray-200 text-m font-sans text-left w-40">{item.description}</p>
-                      <a className="text-slate-300 text-l font-sans text-left py-2" href={item.link} target="_blank"><u>Go to it</u> &#10132;</a>
+                      <button className="bg-sky-700 text-gray-100 font-sans text-m p-1 rounded-md mt-2 duration-300 ease-in-out  hover:bg-sky-900">
+                        <a className="text-white text-l font-sans text-left py-2" href={item.link} target="_blank">View Project</a>
+                      </button>
                     </div>
                   </div>
                 )}
