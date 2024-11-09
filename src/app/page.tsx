@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from 'react';
 import Image from 'next/image'
-import { BsGithub, BsEnvelope } from "react-icons/bs";
+import { BsGithub, BsEnvelope, BsLinkedin } from "react-icons/bs";
 import { useMediaQuery } from 'react-responsive';
 
 export default function Home() {
@@ -130,6 +130,9 @@ export default function Home() {
         <div className="w-full bg-zinc-950 flex flex-row justify-center items-end">
           <a href="https://github.com/AndrewWladis/" className='p-4' target="blank">
             <BsGithub color='white' size={50} />
+          </a>
+          <a href="https://www.linkedin.com/in/andrew-wladis-720070331/" className='p-4' target="blank">
+            <BsLinkedin color='white' size={50} />
           </a>
           <a href="mailto:email@andrewwladis@gmail.com" className='p-4'>
             <BsEnvelope color='white' size={50} />
