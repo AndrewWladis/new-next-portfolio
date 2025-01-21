@@ -134,7 +134,7 @@ export default function Home() {
           <a href="https://www.linkedin.com/in/andrew-wladis-720070331/" className='p-4' target="blank">
             <BsLinkedin color='white' size={50} />
           </a>
-          <a href="mailto:email@andrewwladis@gmail.com" className='p-4'>
+          <a href="mailto:andrewwladis@gmail.com" className='p-4'>
             <BsEnvelope color='white' size={50} />
           </a>
         </div>
