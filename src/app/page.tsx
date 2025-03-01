@@ -24,7 +24,7 @@ export default function Home() {
 
   return (
     <main className="w-full bg-zinc-950 scroll-smooth h-screen">
-      <nav className="w-full sticky top-0 flex items-center justify-evenly bg-zinc-900 h-fit">
+      <nav className="w-full sticky top-0 flex items-start justify-evenly bg-gradient-to-b from-blue-950 to-transparent" style={{ height: '10%' }}>
         <a href="#projects">
           <p className="text-gray-100 text-2xl font-sans py-4">Projects</p>
         </a>
@@ -78,7 +78,7 @@ export default function Home() {
                   null
                 ) : (
                   <div
-                    className="flex flex-row items-center justify-center bg-gray-800 bg-opacity-50 p-1 mx-1 my-2 rounded-md duration-500 ease-in-out hover:bg-opacity-100"
+                    className="flex flex-row items-center justify-center bg-gradient-to-bl from-indigo-900 to-teal-950 p-1 mx-1 my-2 rounded-md shadow-lg duration-500 ease-in-out hover:bg-opacity-100"
                     style={{
                       minWidth: 315
                     }}
@@ -98,7 +98,7 @@ export default function Home() {
                     <div className='flex flex-col justify-center h-full'>
                       <p className="text-gray-200 text-2xl font-sans text-left font-medium">{item.name}</p>
                       <p className="text-gray-200 text-m font-sans text-left w-40">{item.description}</p>
-                      <button className="bg-sky-600 text-gray-100 font-sans text-m p-1 rounded-md mt-2 duration-300 ease-in-out  hover:bg-sky-700">
+                      <button className="border-2 border-sky-600 text-gray-100 font-sans text-m p-1 rounded-lg mt-2 duration-300 ease-in-out  hover:bg-sky-900">
                         <a className="text-white text-l font-sans text-left py-2" href={item.link} target="_blank">View Project</a>
                       </button>
                     </div>
