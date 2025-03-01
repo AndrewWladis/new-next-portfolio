@@ -78,7 +78,7 @@ export default function Home() {
                   null
                 ) : (
                   <div
-                    className="flex flex-row items-center justify-center bg-gradient-to-bl from-indigo-900 to-teal-950 p-1 mx-1 my-2 rounded-md shadow-lg duration-500 ease-in-out hover:bg-opacity-100"
+                    className="flex flex-row items-center justify-center bg-gradient-to-bl from-indigo-900 to-teal-950 p-1 mx-1 my-2 rounded-sm shadow-md duration-300 ease-in-out hover:shadow-2xl"
                     style={{
                       minWidth: 315
                     }}
