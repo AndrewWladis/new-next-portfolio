@@ -78,23 +78,23 @@ export default function Home() {
                   null
                 ) : (
                   <div
-                    className="flex flex-row items-center justify-center bg-gradient-to-bl from-indigo-900 to-teal-950 p-1 mx-1 my-2 rounded-sm shadow-md duration-300 ease-in-out hover:shadow-2xl"
+                    className="flex flex-row items-center justify-center bg-gradient-to-bl from-indigo-900 to-teal-950 p-1 mx-1 my-2 rounded-xl shadow-md duration-300 ease-in-out hover:shadow-2xl"
                     style={{
                       minWidth: 315
                     }}
                     key={item.name.replace(/\s/g, "").toLowerCase()}
                   >
                     <Image
-                      src={`/${item.name.replace(/\s/g, "").toLowerCase()}.png`}
-                      width={135}
-                      height={300}
-                      alt={item.name}
-                      style={{
-                        minWidth: 135,
-                        minHeight: 300
-                      }}
-                      className='pr-3 object-contain'
-                    />
+                        src={`/${item.name.replace(/\s/g, "").toLowerCase()}.png`}
+                        width={135}
+                        height={300}
+                        alt={item.name}
+                        style={{
+                          minWidth: 135,
+                          minHeight: 300
+                        }}
+                        className='object-contain mr-3 ml-2'
+                      />
                     <div className='flex flex-col justify-center h-full'>
                       <p className="text-gray-200 text-2xl font-sans text-left font-medium">{item.name}</p>
                       <p className="text-gray-200 text-m font-sans text-left w-40">{item.description}</p>
