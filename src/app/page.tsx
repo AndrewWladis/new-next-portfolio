@@ -29,7 +29,7 @@ export default function Home() {
           <p className="text-gray-100 text-2xl font-sans py-4">Projects</p>
         </a>
         <a href="#skills">
-          <p className="text-gray-100 text-2xl font-sans py-4">Skills</p>
+          <p className="text-gray-100 text-2xl font-sans py-4">My Skills</p>
         </a>
         <a href="#contact">
           <p className="text-gray-100 text-2xl font-sans py-4">Contact</p>
@@ -40,8 +40,10 @@ export default function Home() {
         <h2 className="text-gray-100 text-4xl font-sans">Software Developer</h2>
       </div>
       <div id="projects" className="w-full bg-gradient-to-b from-zinc-950 to-blue-950 flex flex-col" style={{ paddingTop: 70 }}>
-        <h1 className="text-gray-100 text-3xl font-sans text-center py-2 ">Some of my more recent projects...</h1>
-        <div className='flex flex-wrap justify-evenly'>
+
+          <div className="mb-10 text-center">
+            <h2 className="text-4xl font-sans font-bold text-gray-100 md:text-5xl">Some of my more recent projects...</h2>
+          </div>        <div className='flex flex-wrap justify-evenly'>
           {[
             {
               name: "Music Box'd",
@@ -108,25 +110,63 @@ export default function Home() {
             ))}
         </div>
       </div>
-      <div id="skills" className="w-full bg-gradient-to-b from-blue-950 to-zinc-950 flex flex-col h-fit">
-        <h1 className="text-gray-100 text-4xl font-sans text-center p-5">My Skills</h1>
-        <div className="w-full flex flex-wrap flex-row justify-center">
-          {/* add java */}
-          {['html', 'css', 'js', 'ts', 'node', 'react', 'python', 'cpp', 'java', 'torch', 'git',  'firebase', 'mongodb', 'photoshop', 'xd', 'illustrater'].map((item) => (
-            <div className='m-5 h-fit w-fit' style={{ borderRadius: '20px', overflow: 'hidden' }}>
-              <Image
-                src={`/skills/${item}.jpg`}
-                width={110}
-                height={110}
-                alt={item}
-                key={item}
-              />
-            </div>
-          ))}
+      <div id="skills" className="w-full bg-gradient-to-b from-blue-950 to-zinc-950 flex flex-col h-fit py-16">
+        <div className="mx-auto w-full max-w-7xl px-6">
+          <div className="mb-10 text-center">
+            <h2 className="text-4xl font-sans font-bold text-gray-100 md:text-5xl">My Skills</h2>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {[
+              {
+                title: 'Programming Languages',
+                accent: 'from-cyan-400 via-sky-500 to-blue-600',
+                skills: ['JavaScript', 'TypeScript', 'Python', 'Java', 'C/C++', 'SQL', 'CSS', 'HTML'],
+              },
+              {
+                title: 'Frameworks & Libraries',
+                accent: 'from-violet-400 via-purple-500 to-fuchsia-600',
+                skills: ['React', 'Next.js', 'React Native', 'Node.js', 'Angular', 'Bootstrap', 'Tailwind CSS', 'Expo', 'Firebase', 'MongoDB', 'NumPy', 'PyTorch', 'Torch'],
+              },
+              {
+                title: 'Tools & Platforms',
+                accent: 'from-emerald-400 via-teal-500 to-cyan-600',
+                skills: ['Git', 'GitHub', 'GitLab', 'Azure', 'Google Cloud', 'Netlify', 'App Store Connect', 'Google Analytics', 'Adobe Photoshop', 'Adobe XD', 'Adobe Illustrator', 'Google Workspace', 'Microsoft Office'],
+              },
+              {
+                title: 'CS & ML Concepts',
+                accent: 'from-amber-400 via-orange-500 to-rose-500',
+                skills: ['Gradient Descent', 'Backpropagation', 'Neural Networks', 'CNNs', 'Object-Oriented Design'],
+              },
+            ].map((group, index) => (
+              <div
+                key={group.title}
+                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_20px_60px_rgba(15,23,42,0.45)] backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-sky-400/60 hover:bg-slate-900/80"
+              >
+                <div className="mb-5 flex items-center justify-between">
+                  <h2 className="text-xl font-semibold text-white">{group.title}</h2>
+                </div>
+
+                <div className="flex flex-wrap gap-2.5">
+                  {group.skills.map((skill) => (
+                    <span
+                      key={`${group.title}-${skill}`}
+                      className="rounded-full border border-sky-400/30 bg-sky-500/10 px-3 py-1.5 text-sm font-medium text-sky-100 transition duration-200 hover:border-sky-300/70 hover:bg-sky-400/15"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
       <div id="contact" className="w-full bg-zinc-950 h-1/6 flex flex-col pt-2">
-        <h1 className="text-gray-100 text-4xl font-sans text-center">Contact</h1>
+
+          <div className="mb-10 text-center">
+            <h2 className="text-4xl font-sans font-bold text-gray-100 md:text-5xl">Contact</h2>
+          </div>
         <div className="w-full bg-zinc-950 flex flex-row justify-center items-end">
           <a href="https://github.com/AndrewWladis/" className='p-4' target="blank">
             <BsGithub color='white' size={50} />
