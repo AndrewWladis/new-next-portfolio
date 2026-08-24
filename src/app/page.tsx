@@ -40,7 +40,7 @@ export default function Home() {
       description: "Rank yourself and your friends based on basketball 1v1 scores.",
       highlights: [
         "Competitive ranking and score tracking.",
-        "Designed around friend-group interactions."
+        "Leaderboard progression with unlockable profile pictures as you climb the ranks."
       ]
     },
     {
@@ -51,8 +51,7 @@ export default function Home() {
       published: "Published April 2023",
       description: "A competitive daily Breaking Bad quote trivia game.",
       highlights: [
-        "Daily challenges with social share moments.",
-        "Built around fan-community engagement."
+        "Daily trivia challenges.", 
       ]
     },
     {
@@ -63,7 +62,7 @@ export default function Home() {
       published: "Published December 2023",
       description: "Challenge your skills, reflexes, and endurance in this addictive arcade adventure.",
       highlights: [
-        "Fast-paced mechanics and progression.",
+        "Fast-paced Flappy Bird-style gameplay.",
         "Optimized for responsive touch controls."
       ]
     },
