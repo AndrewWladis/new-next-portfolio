@@ -1,26 +1,73 @@
 "use client";
-import { useState, useEffect } from 'react';
 import Image from 'next/image'
 import { BsGithub, BsEnvelope, BsLinkedin } from "react-icons/bs";
-import { useMediaQuery } from 'react-responsive';
 
 export default function Home() {
-  const [width, setWidth] = useState(1000);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const isDesktop = useMediaQuery({ minWidth: 1024 });
-
-  const handleMouseMove = (event: MouseEvent) => {
-    setMousePosition({ x: event.clientX, y: event.clientY });
-  };
-
-  useEffect(() => {
-    window.addEventListener('mousemove', handleMouseMove);
-    setWidth(window.innerWidth);
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
+  const projects = [
+    {
+      name: "Pillowbook - Dream Decoder",
+      link: "https://apps.apple.com/us/app/pillowbook-dream-decoder/id6775021552",
+      image: "/pillowbook.png",
+      stack: "React Native, Expo, OpenAI API, Firebase",
+      published: "Published June 2026",
+      description: "A personalized dream-journaling and interpretation app for iOS.",
+      highlights: [
+        "Built with React Native and Expo for a polished mobile-first experience.",
+        "Integrated the OpenAI API to generate personalized interpretations from dream entries and recurring themes.",
+        "Designed a knowledge-graph system linking symbols, emotions, and people to surface long-term dream patterns."
+      ]
+    },
+    {
+      name: "Swiftie Swipe",
+      link: "https://apps.apple.com/us/app/swiftie-swipe/id6479224086",
+      image: "/swiftieswipe.png",
+      stack: "React Native, Expo, Azure, SQL",
+      published: "Published March 2024",
+      description: "The ultimate unofficial daily Swiftie challenge game!",
+      highlights: [
+        "Daily replayable gameplay loop.",
+        "Built for short-session mobile engagement.",
+        "Achieved over 20,000 downloads.",
+        "Created an Azure backend with an Azure SQL database to host Expo notification tokens."
+      ]
+    },
+    {
+      name: "Dunk Rank",
+      link: "https://apps.apple.com/us/app/dunk-rank/id6448699695",
+      image: "/dunkrank.png",
+      stack: "React Native, Expo, Firebase",
+      published: "Published May 2023",
+      description: "Rank yourself and your friends based on basketball 1v1 scores.",
+      highlights: [
+        "Competitive ranking and score tracking.",
+        "Designed around friend-group interactions."
+      ]
+    },
+    {
+      name: "Quote Cook",
+      link: "https://apps.apple.com/us/app/quote-cook/id6447148619",
+      image: "/quotecook.png",
+      stack: "React Native, Expo",
+      published: "Published April 2023",
+      description: "A competitive daily Breaking Bad quote trivia game.",
+      highlights: [
+        "Daily challenges with social share moments.",
+        "Built around fan-community engagement."
+      ]
+    },
+    {
+      name: "EKSE",
+      link: "https://apps.apple.com/us/app/ekse/id6450754813",
+      image: "/ekse.png",
+      stack: "React Native, Expo, MongoDB",
+      published: "Published December 2023",
+      description: "Challenge your skills, reflexes, and endurance in this addictive arcade adventure.",
+      highlights: [
+        "Fast-paced mechanics and progression.",
+        "Optimized for responsive touch controls."
+      ]
+    },
+  ];
 
   return (
     <main className="w-full bg-zinc-950 scroll-smooth h-screen">
@@ -39,75 +86,69 @@ export default function Home() {
         <h1 className="text-gray-100 text-5xl font-sans font-semibold">Andrew Wladis</h1>
         <h2 className="text-gray-100 text-4xl font-sans">Software Developer</h2>
       </div>
-      <div id="projects" className="w-full bg-gradient-to-b from-zinc-950 to-blue-950 flex flex-col" style={{ paddingTop: 70 }}>
+      <div id="projects" className="w-full bg-gradient-to-b from-zinc-950 via-slate-950 to-blue-950 py-20">
+        <div className="mx-auto w-full max-w-7xl px-6">
+          <div className="mb-12 flex flex-col items-center text-center">
+            <h2 className="text-4xl font-sans font-bold text-gray-100 md:text-5xl">Projects</h2>
+          </div>
 
-          <div className="mb-10 text-center">
-            <h2 className="text-4xl font-sans font-bold text-gray-100 md:text-5xl">Some of my more recent projects...</h2>
-          </div>        <div className='flex flex-wrap justify-evenly'>
-          {[
-            {
-              name: "Music Box'd",
-              link: "https://apps.apple.com/app/id6476071299",
-              description: "Discover and share your favorite albums with Music Boxd!"
-            },
-            {
-              name: "Swiftie Swipe",
-              link: "https://apps.apple.com/us/app/swiftie-swipe/id6479224086",
-              description: "The ultimate unoffical daily Swiftie challenge game!"
-            },
-            {
-              name: "Dunk Rank",
-              link: "https://apps.apple.com/us/app/dunk-rank/id6448699695",
-              description: "Dunk Rank is the premiere app for ranking you and your friends based off basketball 1v1 scores."
-            },
-            {
-              name: "Quote Cook",
-              link: "https://apps.apple.com/us/app/quote-cook/id6447148619",
-              description: "In this competitive daily unofficial Breaking Bad game you can compete in daily quote trivia and share your results with your friends."
-            },
-            {
-              name: "EKSE",
-              link: "https://apps.apple.com/us/app/ekse/id6450754813",
-              description: "Challenge your skills, reflexes, and endurance in this addictive arcade adventure: EKSE."
-            },
-            {
-              name: "515",
-              link: "https://515game.netlify.app/",
-              description: "515 is a Breaking Bad-themed clone of 2048, where players combine elements blocks to create an empire."
-            }].map((item) => (
-              <>
-                {(width < 730 && item.name === "") ? (
-                  null
-                ) : (
-                  <div
-                    className="flex flex-row items-center justify-center bg-gradient-to-bl from-indigo-900 to-teal-950 p-1 mx-1 my-2 rounded-xl shadow-md duration-300 ease-in-out hover:shadow-2xl"
-                    style={{
-                      minWidth: 315
-                    }}
-                    key={item.name.replace(/\s/g, "").toLowerCase()}
-                  >
+          <div className="grid gap-6 lg:grid-cols-2">
+            {projects.map((item) => (
+              <article
+                key={item.name.replace(/\s/g, "").toLowerCase()}
+                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-slate-900/50 p-5 shadow-[0_20px_60px_rgba(8,47,73,0.35)] backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-cyan-300/60 hover:bg-slate-900/70"
+              >
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(34,211,238,0.15),transparent_55%)]" aria-hidden="true" />
+                <div className="relative grid gap-5 md:grid-cols-[140px_1fr]">
+                  <div className="mx-auto flex w-full max-w-[140px] items-center justify-center rounded-2xl p-2">
                     <Image
-                        src={`/${item.name.replace(/\s/g, "").toLowerCase()}.png`}
-                        width={135}
-                        height={300}
-                        alt={item.name}
-                        style={{
-                          minWidth: 135,
-                          minHeight: 300
-                        }}
-                        className='object-contain mr-3 ml-2'
-                      />
-                    <div className='flex flex-col justify-center h-full'>
-                      <p className="text-gray-200 text-2xl font-sans text-left font-medium">{item.name}</p>
-                      <p className="text-gray-200 text-m font-sans text-left w-40">{item.description}</p>
-                      <button className="border-2 border-sky-600 text-gray-100 font-sans text-m p-1 rounded-lg mt-2 duration-300 ease-in-out  hover:bg-sky-900">
-                        <a className="text-white text-l font-sans text-left py-2" href={item.link} target="_blank">View Project</a>
-                      </button>
-                    </div>
+                      src={item.image}
+                      width={180}
+                      height={375}
+                      alt={item.name}
+                      className="h-auto max-h-[250px] w-auto rounded-lg object-contain"
+                    />
                   </div>
-                )}
-              </>
+
+                  <div>
+                    <div className="mb-3 flex flex-wrap gap-2">
+                      <span className="py-1 text-xs font-medium uppercase tracking-wide text-slate-200">
+                        {item.published}
+                      </span>
+                    </div>
+
+                    <h3 className="text-2xl font-semibold text-white">{item.name}</h3>
+                    <p className="mt-2 text-slate-300">{item.description}</p>
+                    <p className="mt-2 text-sm font-medium text-cyan-200">{item.stack}</p>
+
+                    <ul className="mt-4 space-y-1.5 text-sm text-slate-200">
+                      {item.highlights.map((highlight) => (
+                        <li key={`${item.name}-${highlight}`} className="flex items-start gap-2">
+                          <span className="mt-1 h-1.5 w-1.5 rounded-full bg-cyan-300" aria-hidden="true" />
+                          <span>{highlight}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    {item.link ? (
+                      <a
+                        className="mt-5 inline-flex items-center rounded-xl border border-cyan-300/60 bg-cyan-400/20 px-4 py-2 text-sm font-semibold text-cyan-50 transition duration-200 hover:bg-cyan-300/30"
+                        href={item.link}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        View Project
+                      </a>
+                    ) : (
+                      <span className="mt-5 inline-flex items-center rounded-xl border border-cyan-300/40 bg-cyan-400/10 px-4 py-2 text-sm font-semibold text-cyan-100">
+                        Published
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </article>
             ))}
+          </div>
         </div>
       </div>
       <div id="skills" className="w-full bg-gradient-to-b from-blue-950 to-zinc-950 flex flex-col h-fit py-16">
